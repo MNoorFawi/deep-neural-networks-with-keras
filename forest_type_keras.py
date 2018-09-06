@@ -38,6 +38,7 @@ model.compile(loss = 'categorical_crossentropy',
 print("# Fitting the model on training data")
 model.fit(x_train, y_train,
           batch_size = 32, epochs = 10, verbose = 1)
+print("")
 print("# Evaluating the model on test data")
 loss, accuracy = model.evaluate(x_test, y_test, verbose = 0)
 print("loss    ", ":", loss)
