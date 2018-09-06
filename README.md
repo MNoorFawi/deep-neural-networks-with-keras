@@ -35,6 +35,6 @@ accuracy : 0.888136689371112
 
 # Predict new values
 actual data   :  [1, 5, 1, 3, 2, 7, 2, 6, 2, 7]
-predicted data:  [2, 5, 1, 6, 2, 7, 1, 6, 2, 7]
+predicted data:  [1, 5, 1, 6, 2, 7, 2, 6, 2, 7]
 
 ```
