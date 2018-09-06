@@ -47,3 +47,4 @@ print("# Predict new values")
 predictions = model.predict(x_test)
 print("actual data   : ", [y_test[i].argmax(axis = 0) for i in range(0, 10)])
 print("predicted data: ", [predictions[i].argmax(axis = 0) for i in range(0, 10)])
+
