@@ -4,10 +4,10 @@ from sklearn.model_selection import train_test_split
 from keras.models import Sequential
 from keras.layers import Dense, Dropout
 print("### READING DATA ###")
-data = pd.read_csv('covtype.data.gz', compression='gzip', header=None, sep=',')
+data = pd.read_csv("covtype.data.gz", compression = "gzip", header = None, sep = ",")
 # to delete rows with any unknown column value
 # unknown_indx = data.apply(
-#     lambda x: x.astype(str).str.contains(r'\?.*').any(),
+#     lambda x: x.astype(str).str.contains(r"\?.*").any(),
 #     axis = 1)
 # sum(unknown_indx)
 # data = data[~unknown_indx]
@@ -26,15 +26,15 @@ print("")
 print("### BUILDING THE MODEL ###")
 model = Sequential()
 print("# (1, 54) input => 500 nodess => 0.1 dropout => 500 nodes => 0.1 dropout => 8 outputs (from 0:7)")
-model.add(Dense(500, activation = 'relu', input_shape = (54,))) # 54 is the number of variables in each obs.
+model.add(Dense(500, activation = "relu", input_shape = (54,))) # 54 is the number of variables in each obs.
 model.add(Dropout(0.1))
-model.add(Dense(500, activation = 'relu'))
+model.add(Dense(500, activation = "relu"))
 model.add(Dropout(0.1))
-model.add(Dense(8, activation = 'softmax')) # outputs starting from 0 so y is from 0:7 and 7 if y is from 0:6
+model.add(Dense(8, activation = "softmax")) # outputs starting from 0 so y is from 0:7 and 7 if y is from 0:6
 print("# Compiling the model")
-model.compile(loss = 'categorical_crossentropy',
-              optimizer = 'adam',
-              metrics = ['accuracy'])
+model.compile(loss = "categorical_crossentropy",
+              optimizer = "adam",
+              metrics = ["accuracy"])
 print("# Fitting the model on training data")
 model.fit(x_train, y_train,
           batch_size = 32, epochs = 10, verbose = 1)
