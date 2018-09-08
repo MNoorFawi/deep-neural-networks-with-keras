@@ -3,7 +3,7 @@ ANN with Keras
 
 Building an **artificial deep neural network** using **keras** and Python ... We will be using the Forest Cover Type dataset at <https://archive.ics.uci.edu/ml/machine-learning-databases/covtype/> to predict forest cover type ...
 
-``` r
+``` python
 # run the script from command line
 
 $ python forest_type_keras.py
